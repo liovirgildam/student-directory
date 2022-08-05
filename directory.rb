@@ -1,16 +1,16 @@
 # Let's put all students into an array
 students =[
-  ["Dr. Hannibal Lecter", :august],
-  ["Darth Vader", :august],
-  ["Nurse Ratched", :august],
-  ["Michael Corleone", :august],
-  ["Alex DeLarge", :august],
-  ["The Wicked Witch of the West", :august],
-  ["Terminator", :august],
-  ["Freddy Krueger", :august],
-  ["The Joker", :august],
-  ["Joffrey Baratheon", :august],
-  ["Norman Bates", :august]
+  {name: "Dr. Hannibal Lecter", cohort: :august},
+  {name: "Darth Vader", cohort: :august},
+  {name: "Nurse Ratched", cohort: :august},
+  {name: "Michael Corleone", cohort: :august},
+  {name: "Alex DeLarge", cohort: :august},
+  {name: "The Wicked Witch of the West", cohort: :august},
+  {name: "Terminator", cohort: :august},
+  {name: "Freddy Krueger", cohort: :august},
+  {name: "The Joker", cohort: :august},
+  {name: "Joffrey Baratheon", cohort: :august},
+  {name: "Norman Bates", cohort: :august}
 ]
 
 
@@ -21,7 +21,7 @@ end
 
 def print(students)
   students.each do |student|
-    puts "#{student[0]} (#{student[1]} cohort)"
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
 
