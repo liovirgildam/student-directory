@@ -1,16 +1,16 @@
 # Let's put all students into an array
 students =[
-  "Dr. Hannibal Lecter",
-  "Darth Vader",
-  "Nurse Ratched",
-  "Michael Corleone",
-  "Alex DeLarge",
-  "The Wicked Witch of the West",
-  "Terminator",
-  "Freddy Krueger",
-  "The Joker",
-  "Joffrey Baratheon",
-  "Norman Bates"
+  ["Dr. Hannibal Lecter", :august],
+  ["Darth Vader", :august],
+  ["Nurse Ratched", :august],
+  ["Michael Corleone", :august],
+  ["Alex DeLarge", :august],
+  ["The Wicked Witch of the West", :august],
+  ["Terminator", :august],
+  ["Freddy Krueger", :august],
+  ["The Joker", :august],
+  ["Joffrey Baratheon", :august],
+  ["Norman Bates", :august]
 ]
 
 
@@ -19,14 +19,14 @@ def print_header
   puts "--------------------------------"
 end
 
-def print(names)
-  names.each do |name|
-    puts name
+def print(students)
+  students.each do |student|
+    puts "#{student[0]} (#{student[1]} cohort)"
   end
 end
 
-def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+def print_footer(students)
+  puts "Overall, we have #{students.count} great students"
 end
 
 #nothing happens until we call the methods
