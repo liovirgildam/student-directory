@@ -33,22 +33,26 @@ def print_header
 end
 
 def print(students)
-  students_by_cohort = {}
-  
-  students.each do |student|
-    cohort = student[:cohort]
     
-    if students_by_cohort[cohort] == nil
-      students_by_cohort[cohort] = []
+  if !students.empty?
+    students_by_cohort = {}
+  
+    students.each do |student|
+      cohort = student[:cohort]
+    
+      if students_by_cohort[cohort] == nil
+        students_by_cohort[cohort] = []
+      end
+    
+      students_by_cohort[cohort] << student[:name]
     end
-    
-    students_by_cohort[cohort] << student[:name]
-  end
   
-  students_by_cohort.map do |student| 
-    puts student
+    students_by_cohort.map do |student| 
+      puts student
+    end
+  else
+    puts "No students in the class."
   end
-
 end
 
 def print_footer(students)
