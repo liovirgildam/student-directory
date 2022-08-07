@@ -5,7 +5,7 @@ def input_students
   students = []
   #get the name
   name = gets.chomp
-  puts "Enter country of the students"
+  puts "Enter country of the student"
   country = gets.chomp
   #while the name is not empty, repeat this code
   while !name.empty? do
@@ -21,18 +21,18 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "--------------------------------"
+  puts "The students of Villains Academy".center(45)
+  puts "--------------------------------".center(45)
 end
 
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} - #{student[:country]} (#{student[:cohort]} cohort)"
+    puts "#{student[:name]} - #{student[:country]} (#{student[:cohort]} cohort)".center(45)
   end
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  puts "Overall, we have #{students.count} great students".center(45)
 end
 
 #nothing happens until we call the methods
