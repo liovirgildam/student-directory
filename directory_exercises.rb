@@ -31,9 +31,22 @@ def print_header
 end
 
 def print(students)
+  students_by_cohort = {}
+  
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    cohort = student[:cohort]
+    
+    if students_by_cohort[cohort] == nil
+      students_by_cohort[cohort] = []
+    end
+    
+    students_by_cohort[cohort] << student[:name]
   end
+  
+  students_by_cohort.map do |student| 
+    puts student
+  end
+
 end
 
 def print_footer(students)
