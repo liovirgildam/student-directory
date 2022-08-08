@@ -19,6 +19,9 @@ end
 
 def interactive_menu
   #1. print the menu and ask the user what to do
+  puts "1. Input the students"
+  puts "2. Show the students"
+  puts "9. Exit"
   #2. read the input and save it into a variable
   #3. do what the user asked
   #4. repeat from step 1
