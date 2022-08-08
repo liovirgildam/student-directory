@@ -17,6 +17,13 @@ def input_students
   students
 end
 
+def interactive_menu
+  #1. print the menu and ask the user what to do
+  #2. read the input and save it into a variable
+  #3. do what the user asked
+  #4. repeat from step 1
+end
+
 def print_header
   puts "The students of Villains Academy"
   puts "--------------------------------"
