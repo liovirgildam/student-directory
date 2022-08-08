@@ -4,9 +4,9 @@ def input_students
   #create an empty array
   students = []
   #get the name
-  name = gets.chomp
+  name = gets.delete_suffix!("\n")
   puts "Enter cohort of the student"
-  cohort = gets.chomp 
+  cohort = gets.delete_suffix!("\n")
   #while the name is not empty, repeat this code
   while !name.empty? do
     #add the student hash to the students array
@@ -20,8 +20,8 @@ def input_students
     puts "Now we have #{students.count} #{students.count == 1? "student": "students"}"
     
     #get another name from the user
-    name = gets.chomp
-    cohort = gets.chomp 
+    name = gets.delete_suffix!("\n")
+    cohort = gets.delete_suffix!("\n")
   end
   # return another name from the user
   students
