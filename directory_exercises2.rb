@@ -62,12 +62,11 @@ end
 def save_students
   filename = STDIN.gets.chomp()
   #open the file for writing
-  File.open(filename, "w") do |file|
+  CSV.open(filename, "w") do |file|
   # iterate over the array of students
     @students.each do |student|
       student_data = [student[:name], student[:cohort]]
-      csv_line = student_data.join(",")
-      file.puts csv_line
+      file << student_data
     end
   end
 end
@@ -76,7 +75,6 @@ def load_students
   filename = STDIN.gets.chomp() # get filename from user
   if File.exist?(filename)
     CSV.foreach(filename) do |line|
-      # use row here...
       name, cohort = line
       add_students_to_array(name, cohort = "august")
     end
