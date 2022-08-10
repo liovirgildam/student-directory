@@ -32,14 +32,19 @@ end
 def user_menu_choice(selection)
   case selection
     when "1"
+      puts "Selected option 1- Add students"
       input_students
     when "2"
+      puts "Selected option 2- show students in the class"
       show_students
     when "3"
+      puts "Selected option 3- Save students to file"
       save_students
     when "4"
+      puts "Selected option 4- Get students in the file"
       load_students
     when "9"
+      puts "Selected option 9- Exit program"
       exit
     else
       puts "I don't know what you mean, try again"
