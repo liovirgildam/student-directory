@@ -70,13 +70,19 @@ def save_students
   file.close
 end
 
-def load_students(filename = "students.csv")
-  file = File.open(filename, "r")
-  file.readlines.each do |line|
-    name, cohort = line.chomp.split(',')
-    add_students_to_array(name, cohort = "august")
+def load_students 
+  filename = STDIN.gets.chomp() # get filename from user
+  if File.exist?(filename)
+    file = File.open(filename, "r")
+    file.readlines.each do |line|
+      name, cohort = line.chomp.split(',')
+      add_students_to_array(name, cohort = "august")
+    end
+    file.close
+  else
+    puts "File doesn't exist"
   end
-  file.close
+  
 end
 
 def input_students
