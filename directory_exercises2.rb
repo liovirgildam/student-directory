@@ -1,3 +1,4 @@
+require 'csv'
 @students = []
 
 def print_menu
@@ -74,11 +75,10 @@ end
 def load_students 
   filename = STDIN.gets.chomp() # get filename from user
   if File.exist?(filename)
-    File.open(filename, "r") do |file|
-      file.readlines.each do |line|
-        name, cohort = line.chomp.split(',')
-        add_students_to_array(name, cohort = "august")
-      end
+    CSV.foreach(filename) do |line|
+      # use row here...
+      name, cohort = line
+      add_students_to_array(name, cohort = "august")
     end
   else
     puts "File doesn't exist"
