@@ -74,12 +74,12 @@ end
 def load_students 
   filename = STDIN.gets.chomp() # get filename from user
   if File.exist?(filename)
-    file = File.open(filename, "r")
-    file.readlines.each do |line|
-      name, cohort = line.chomp.split(',')
-      add_students_to_array(name, cohort = "august")
+    File.open(filename, "r") do |file|
+      file.readlines.each do |line|
+        name, cohort = line.chomp.split(',')
+        add_students_to_array(name, cohort = "august")
+      end
     end
-    file.close
   else
     puts "File doesn't exist"
   end
