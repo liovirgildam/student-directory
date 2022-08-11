@@ -113,7 +113,12 @@ def try_load_students
   puts "Loaded #{@students.count} from #{filename}"
 end
 
+def source_code #Get the name of the currently executed file
+  puts "Currently executing #{File.basename(__FILE__)}"
+end
+
 #nothing happens until we call the methods
 
+source_code
 try_load_students
 interactive_menu
